@@ -225,6 +225,29 @@
   .t-title { font-weight: 600; margin: 0 0 .2rem; font-size: 1.05rem; }
   .t-desc { margin: 0; color: var(--muted); line-height: 1.55; }
 
+  /* Official schedule */
+  .sub-head { font-family: var(--display); font-weight: 600; font-size: 1.6rem; margin: 2rem 0 .2rem; }
+  .sub-head:first-of-type { margin-top: 0; }
+  .sub-note { margin: 0 0 1rem; color: var(--muted); font-size: .92rem; }
+  .official { list-style: none; margin: 0 0 2.25rem; padding: 0; counter-reset: o; }
+  .official li {
+    counter-increment: o;
+    display: grid; grid-template-columns: 2rem 1fr; gap: .1rem .75rem;
+    padding: .95rem 1rem; border-top: 1px solid var(--rule);
+  }
+  .official li:last-child { border-bottom: 1px solid var(--rule); }
+  .official li::before {
+    content: counter(o); grid-row: span 2;
+    font-family: var(--display); font-weight: 700; font-size: 1.4rem; color: var(--gold); line-height: 1.1;
+  }
+  .official li.best {
+    background: color-mix(in srgb, var(--gold) 16%, transparent);
+    border-radius: 6px; border-color: transparent;
+  }
+  .o-time { font-family: var(--display); font-weight: 700; font-size: 1.3rem; line-height: 1.2; }
+  .o-desc { margin: .15rem 0 0; line-height: 1.55; }
+  .o-desc strong { color: var(--accent); font-weight: 600; }
+
   /* Info rows */
   .info { margin: 0; }
   .info .row { display: grid; grid-template-columns: 8rem 1fr; gap: .25rem 1.5rem; padding: 1.1rem 0; border-top: 1px solid var(--rule); }
@@ -320,6 +343,25 @@
     <div class="card">
       <h2 id="t2" class="page-title">Lịch trình</h2>
       <p class="page-sub">Sáng Chủ nhật, 27/9/2026</p>
+
+      <h3 class="sub-head">Buổi lễ diễn ra thế nào</h3>
+      <p class="sub-note">Theo lịch chính thức của nhà trường</p>
+      <ol class="official">
+        <li>
+          <span class="o-time">7:45 – 8:00</span>
+          <p class="o-desc">Văn nghệ chào mừng</p>
+        </li>
+        <li>
+          <span class="o-time">8:00 – 11:30</span>
+          <p class="o-desc">Chương trình Lễ tốt nghiệp bắt đầu, trao bằng lần lượt theo Trường/Khoa: Trường CNTT&amp;TT, Trường Vật liệu, Khoa Vật lý Kỹ thuật</p>
+        </li>
+        <li class="best">
+          <span class="o-time">10:00 – 11:00</span>
+          <p class="o-desc"><strong>Khoảng thời gian đẹp nhất để mọi người có mặt</strong></p>
+        </li>
+      </ol>
+
+      <h3 class="sub-head">Gặp Nhật Anh</h3>
       <ol class="timeline">
         <li>
           <span class="t-time">9:45</span>
@@ -331,7 +373,7 @@
         </li>
         <li>
           <span class="t-time">10:15</span>
-          <div><p class="t-title">Chúc mừng và chụp ảnh lưu niệm</p><p class="t-desc">Tặng hoa, trò chuyện và chụp ảnh cùng nhau quanh khuôn viên trường.</p></div>
+          <div><p class="t-title">Chúc mừng và chụp ảnh lưu niệm</p><p class="t-desc">Trò chuyện và chụp ảnh cùng nhau quanh khuôn viên trường.</p></div>
         </li>
         <li>
           <span class="t-time">11:30</span>
